@@ -1,0 +1,31 @@
+{
+    "name": "deploy-server-webpack-plugin",
+    "version": "0.0.1",
+    "description": "A plugin that deploys wepack bundles to server",
+    "main": "dist/index.js",
+    "scripts": {
+        "babel": "babel ./src -d ./dist --compact"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mingmingwon/deploy-server-webpack-plugin.git"
+    },
+    "keywords": [
+        "deploy server",
+        "webpack plugin"
+    ],
+    "author": "Jordan Wang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mingmingwon/deploy-server-webpack-plugin/issues"
+    },
+    "homepage": "https://github.com/mingmingwon/deploy-server-webpack-plugin#readme",
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "request": "^2.87.0"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0"
+    }
+}
