@@ -1,19 +1,19 @@
 {
-  "name": "receiver",
-  "version": "0.0.1",
-  "description": "file receiver",
-  "main": "app.js",
-  "scripts": {
-    "start": "pm2 start app.js",
-    "stop": "pm2 stop app.js"
-  },
-  "author": "Jordan Wang",
-  "license": "MIT",
-  "dependencies": {
-    "fs-extra": "^6.0.1",
-    "koa": "^2.5.2",
-    "koa-body": "^4.0.4",
-    "koa-router": "^7.4.0",
-    "pm2": "^3.0.0"
-  }
+	"name": "receiver",
+	"version": "0.0.2",
+	"description": "files receiver",
+	"main": "app.js",
+	"scripts": {
+		"start": "pm2 start app.js",
+		"stop": "pm2 stop app.js"
+	},
+	"author": "Jordan Wang",
+	"license": "MIT",
+	"dependencies": {
+		"fs-extra": "^6.0.1",
+		"koa": "^2.5.2",
+		"koa-body": "^4.0.4",
+		"koa-router": "^7.4.0",
+		"pm2": "^3.0.0"
+	}
 }

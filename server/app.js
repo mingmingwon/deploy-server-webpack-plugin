@@ -1,12 +1,12 @@
 const Koa = require('koa');
 const koaBody = require('koa-body');
-const Router = require('koa-router');
+const KoaRouter = require('koa-router');
 const fse = require('fs-extra');
 
-const router = new Router();
+const router = new KoaRouter();
 router.post('/receiver', koaBody({
 	multipart: true
-}), async (ctx, next) => {
+}), async ctx => {
 	const { files, body: { dest, token } } = ctx.request;
 
 	// deal with "token" here if needed 

@@ -1,6 +1,6 @@
 {
     "name": "deploy-server-webpack-plugin",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A plugin that deploys wepack bundles to server",
     "main": "dist/index.js",
     "scripts": {
@@ -12,7 +12,14 @@
     },
     "keywords": [
         "deploy server",
-        "webpack plugin"
+        "push server",
+        "publish server",
+        "release server",
+        "webpack plugin",
+        "node deploy",
+        "node push",
+        "node publish",
+        "node release"
     ],
     "author": "Jordan Wang",
     "license": "MIT",

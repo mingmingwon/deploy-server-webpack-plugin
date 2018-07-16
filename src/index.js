@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
 const request = require('request');
 
@@ -10,12 +9,12 @@ module.exports = class DeployServerWebpackPlugin {
 
 	apply(compiler) {
 		compiler.plugin('after-emit', (compilation, callback) => {
-			this.validConfig(compilation);
+			this.validateConfig(compilation);
 			this.deployHandler(callback);
 		});
 	}
 
-	validConfig(compilation) {
+	validateConfig(compilation) {
 		const { receiver, token = '' } = this.config;
 		let { mapping } = this.config;
 
@@ -26,10 +25,10 @@ module.exports = class DeployServerWebpackPlugin {
 			this.error('Missing param: mapping');
 		}
 
-		const mappingType = Object.prototype.toString.call(mapping);
-		if (mappingType === '[object Object]') {
+		const type = Object.prototype.toString.call(mapping);
+		if (type === '[object Object]') {
 			mapping = [mapping];
-		} else if (mappingType === '[object Array]') {
+		} else if (type === '[object Array]') {
 			// do nothing
 		} else {
 			this.error('Invalid param: mapping');
@@ -72,9 +71,9 @@ module.exports = class DeployServerWebpackPlugin {
 				// compatible with windows
 				const dest = (this.mapping[index].to + from.replace(item, '')).replace(/\\/g, '/');
 				this.deploy({
+					file: fs.createReadStream(from),
 					dest,
-					token: this.token,
-					file: fs.createReadStream(from)
+					token: this.token
 				});
 			});
 		});
@@ -88,7 +87,7 @@ module.exports = class DeployServerWebpackPlugin {
 			formData
 		}, (err, { statusCode } = {}, body) => {
 			const time = new Date().toLocaleTimeString();
-			if (!err && 200 === statusCode) {
+			if (!err && statusCode === 200) {
 				console.log(chalk.green(`[${time}] [success] => ${formData.dest}`));
 				return;
 			}
@@ -97,7 +96,7 @@ module.exports = class DeployServerWebpackPlugin {
 	}
 
 	error(err) {
-		console.log(`\n${chalk.yellow('[deploy-server-webpack-plugin] ' + err)}`);
+		console.log(`\n${chalk.yellow('[deploy-server-webpack-plugin] ' + err + '. Deploy interrupted.')}`);
 		process.exit();
 	}
 };
