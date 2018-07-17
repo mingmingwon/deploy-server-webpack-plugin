@@ -1,10 +1,10 @@
 {
     "name": "deploy-server-webpack-plugin",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A plugin that deploys wepack bundles to server",
     "main": "dist/index.js",
     "scripts": {
-        "babel": "babel ./src -d ./dist --compact"
+        "babel": "babel ./src -d ./dist --compact --source-maps"
     },
     "repository": {
         "type": "git",

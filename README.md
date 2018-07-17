@@ -80,7 +80,7 @@ Try to visit "@your host/receiver" in browser, when you see "Method Not Allowed"
 |token|String|false|for security if needed|
 
 # Others
-Sometimes bundle file is too big and uploading appears "504 Gateay Time-out" error, enlarge client_max_body_size value in nginx.conf may solve this problem:
+Sometimes bundle file is too big and uploading appears "504 Gateay Time-out" or "413 Request Entity Too Large" error, enlarge client_max_body_size value in nginx.conf may solve this problem:
 ```
 client_max_body_size: 10M; #default 1M
 ```

@@ -69,7 +69,7 @@ module.exports = class DeployServerWebpackPlugin {
 		this.avalKeys.map((item, index) => {
 			this.avalAssets[item].map(from => {
 				// compatible with windows
-				const dest = (this.mapping[index].to + from.replace(item, '')).replace(/\\/g, '/');
+				const dest = (this.mapping[index].dest + from.replace(item, '')).replace(/\\/g, '/');
 				this.deploy({
 					file: fs.createReadStream(from),
 					dest,
