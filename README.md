@@ -1,7 +1,12 @@
+[![npm](https://img.shields.io/npm/v/deploy-server-webpack-plugin.svg)](https://www.npmjs.com/package/deploy-server-webpack-plugin) [![npm](https://img.shields.io/npm/dt/deploy-server-webpack-plugin.svg)](https://www.npmjs.com/package/deploy-server-webpack-plugin) [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/mingmingwon/deploy-server-webpack-plugin/blob/master/LICENSE) 
+
 # Introduction
+
 A plugin that deploys webpack bundles to server. It's useful when server ftp/sftp is forbidden or accessing server need pin + dynamic token each time.
 
 # Install
+
+[![NPM](https://nodei.co/npm/deploy-server-webpack-plugin.png)](https://nodei.co/npm/a-promise-lib/)
 ```
 npm i deploy-server-webpack-plugin -D
 ```
@@ -30,6 +35,7 @@ module.exports = {
   ]
 };
 ```
+
 or
 
 ```js
@@ -67,6 +73,7 @@ Copy ./server folder to you server machine somewhere, init the project and start
 npm i
 npm run start
 ```
+
 Next config your nginx/apache to allow your node service can be accessed.
 
 Try to visit "@your host/receiver" in browser, when you see "Method Not Allowed", it means node server started success, but 'GET' method is not allowed because we only config "POST" router to upload files. Server code is based on Koa, change it according your demand.
@@ -80,7 +87,13 @@ Try to visit "@your host/receiver" in browser, when you see "Method Not Allowed"
 |token|String|false|for security if needed|
 
 # Others
+
 Sometimes bundle file is too big and uploading appears "504 Gateay Time-out" or "413 Request Entity Too Large" error, enlarge client_max_body_size value in nginx.conf may solve this problem:
+
 ```
 client_max_body_size: 10M; #default 1M
 ```
+
+# License
+
+The MIT License
