@@ -1,7 +1,7 @@
 {
     "name": "deploy-server-webpack-plugin",
-    "version": "0.0.3",
-    "description": "A plugin that deploys wepack bundles to server",
+    "version": "0.0.4",
+    "description": "A plugin that deploys wepack bundles to server, and Koa as server to receive bundles",
     "main": "dist/index.js",
     "scripts": {
         "babel": "babel ./src -d ./dist --compact --source-maps"

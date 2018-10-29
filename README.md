@@ -2,7 +2,7 @@
 
 # Introduction
 
-A plugin that deploys webpack bundles to server. It's useful when server ftp/sftp is forbidden or accessing server need pin + dynamic token each time.
+A plugin that deploys webpack bundles to server, and Koa as server to receive bundles. It's useful when server ftp/sftp is forbidden or accessing server need pin + dynamic token each time.
 
 # Install
 
