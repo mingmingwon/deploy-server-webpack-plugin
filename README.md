@@ -6,7 +6,7 @@ A plugin that deploys webpack bundles to server, and Koa as server to receive bu
 
 # Install
 
-[![NPM](https://nodei.co/npm/deploy-server-webpack-plugin.png)](https://nodei.co/npm/a-promise-lib/)
+[![NPM](https://nodei.co/npm/deploy-server-webpack-plugin.png)](https://nodei.co/npm/deploy-server-webpack-plugin/)
 ```
 npm i deploy-server-webpack-plugin -D
 ```
