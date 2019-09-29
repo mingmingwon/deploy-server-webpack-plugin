@@ -8,10 +8,16 @@ module.exports = class DeployServerWebpackPlugin {
 	}
 
 	apply(compiler) {
-		compiler.plugin('after-emit', (compilation, callback) => {
+		let afterEmit = (compilation, callback) => {
 			this.validateConfig(compilation);
 			this.deployHandler(callback);
-		});
+		}
+
+		if (compiler.hooks) {
+			compiler.hooks.afterEmit.tapAsync('afterEmit', afterEmit);
+		} else {
+			compiler.plugin('after-emit', afterEmit);
+		},
 	}
 
 	validateConfig(compilation) {
