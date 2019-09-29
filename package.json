@@ -27,9 +27,5 @@
     "dependencies": {
         "chalk": "^2.4.1",
         "request": "^2.87.0"
-    },
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-preset-env": "^1.7.0"
     }
 }
