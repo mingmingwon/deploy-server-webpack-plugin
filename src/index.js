@@ -17,7 +17,7 @@ module.exports = class DeployServerWebpackPlugin {
 			compiler.hooks.afterEmit.tapAsync('afterEmit', afterEmit);
 		} else {
 			compiler.plugin('after-emit', afterEmit);
-		},
+		}
 	}
 
 	validateConfig(compilation) {

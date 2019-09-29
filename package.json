@@ -1,8 +1,11 @@
 {
     "name": "deploy-server-webpack-plugin",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A plugin that deploys wepack bundles to server, and Koa as server to receive bundles",
-    "main": "src/index.js",
+    "main": "dist/index.js",
+    "scripts": {
+        "babel": "babel ./src -d ./dist --compact --source-maps"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/mingmingwon/deploy-server-webpack-plugin.git"
@@ -27,5 +30,9 @@
     "dependencies": {
         "chalk": "^2.4.1",
         "request": "^2.87.0"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0"
     }
 }
